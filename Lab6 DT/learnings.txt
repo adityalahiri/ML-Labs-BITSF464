@@ -1,0 +1,25 @@
+pruning - either we fix the depth. hyperparameter
+keep trying dt with different depths
+
+Two most famous criterias are Gini and Information Gain(based on impurity)
+We will use Information Gain
+
+Max gini value in case of binary class is 0.5, min 0
+
+Formula gini
+Sum(p*(1-p))
+p = proportion of each class
+Take one feature, split on that. Keep doing. Classify on one that gives min gini on split
+
+Entropy
+
+Measure of impurity in data, ie, how mixed the data is
+Entropy =-( p(a)*log(p(a)) + p(b)*log(p(b)) if two classes a and b)
+
+
+if N points are split into El with n1 pts and Er with n2 pts, then,
+Total entropy after split = El*(n1/N) + Er*(n2/n)
+Information Gain  = Entropy before split - Total Entropy after split
+
+
+Information Gain = after split how much uncertainty has reduced. More IG req, less Entropy req

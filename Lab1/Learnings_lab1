@@ -1,0 +1,41 @@
+Types of scalars in sklearn
+
+Standard scalar. Only useful when data has bell shaped(Normal)
+
+Min Max Scalar. Converts data b/w 0 and 1 if all +ve ele -1,1
+Issue - Sensitive to outliers
+
+Robust Scalar - Takes care of outliers by using interquartile range
+IQR is b/w 25 to 75. Related-boxplot. Useful to remove outliers. Hence invariable to outliers
+
+Normaliser - Xi/root square sum
+
+When you have data first plot a graph and see what kind of data. Then normalise according to that.
+Normaliser is good when you use KNN or distance metric
+
+
+Gender. Categorical data.
+Unordered and ordered Types
+In pandas there is getDummies
+If you do One hot encoding there will be two new columns. Only one will be 1 at a time
+So, one feature becomes n features where n is the number of values the Categorical variable could have taken.
+This is what getDummies does. Pass it the list of columns you want to have one hot encoded. This is useful for
+unordered Categorical.
+For ordinal data(Ordered categorical). Use astype function in pandas.
+Ex. Grades. A,A-,B,B-
+df.schoolGrades.astype("category",ordered=True,categories=[B-,B,A-,A]#lowesttohighestorder in list).cat.cores
+B- = 0, B =1, A-=2,A=3
+
+If data is continuous, to convert to categorical, divide to bins. Use pd.cut
+Give df and numbers of bins and attribute
+pd.cut(bins=5,attr=col_name)
+
+label_encoder. 
+
+Plots
+1. Univariate. Histogram, Bar charts. Usually all that we plot
+2. Multivariate. Correlation Matrix
+
+Need to remove correlated features esp in case of regression. 
+
+

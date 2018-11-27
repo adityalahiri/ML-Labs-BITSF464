@@ -1,0 +1,36 @@
+between feature variables there exists a relationship. This might be non linear.
+Ex. features x1,x2,x3
+if k*x1 + 1*x2 = x3
+check by using correlation matrix
+
+then linear reg wont perform well, neither will logistic
+
+3 types of regression
+1. Ridge
+2. Lasso
+3. Elastic net 
+
+Lp loss, eg,l1 l2 loss
+These 3 regularise
+
+Ridge - adds L2 norm
+Minimises |Xw-y|**2 + z*|w|**2
+
+if by adding or deleting a feature, weights of some others increase/dec drastically there was collinearity
+
+Lasso - adds L1 norm
+
+Elastic net - add L1 and L2 both
+
+Polynomial and Robustness regression in sklearn
+
+for multiple feature values, it is called polynomial regression
+Robustness works better when there are outliers in data  
+
+Also regressions for SVM and MLP
+Mostly these two are used
+Also ensemble methods exist
+MLP SVM do better when not linear exactly data
+
+correlation and covariance
+

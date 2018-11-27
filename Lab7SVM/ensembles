@@ -1,0 +1,47 @@
+Voting and averaging
+
+Voting for classification
+Averaging for regression
+
+Voting
+Say N models were trained. Take voting from all models. Give max as result
+Usually your correct class should have >50% probability of being correct.
+
+Averaging
+Take average of results of all N models.
+
+Weighted Voting and Averaging
+Assign more weights to better performing models.
+Weights are hyperparams
+
+Bootstrap aggregating
+This uses the concept of bagging.
+In bagging we create N models. We use Bootstrap sampling to send appropriate train data to each
+model. Say Total points A=1000 and M = 50 is the amount you want to send to train.
+You pick M with replacement from A
+For N models, we have Xi data for each
+Can parallelise this. So pretty fast. Train each model separately and take their prediction on data.
+
+Random Forest uses bagging technique but it does so in terms of features.
+So bagging can't only be applied on data points but also on features.
+
+Boosting
+If you take a classifier and its weak, then use boosting.
+Suppose first run on N points. It performed badly on m points.
+In next run, increase m points, maybe, double them. ie, increase the wrongly classified points.
+Main goal is to give more priority to those wrongly predicted
+
+AdaBoost
+Uses Decision Trees as base models.
+
+Stacking
+Use multiple ML algorithms. 
+1. Base model
+2. Combiner model
+
+Base model can be >1 type.
+Combiner is 1 model.
+
+Take train. Train on base. Use base model to create new labels. xi->base model->yi'. (xi,yi'). feed this to Combiner
+Take average of yi' of multiple models. Send to combiner. And predict. Used so that outliers are removed
+by base models. Not used that much.
